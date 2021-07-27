@@ -1,0 +1,41 @@
+body,ul,li{
+    padding:0;
+    margin:0;
+    list-style:none;
+    width:100%;
+    height:100%;
+    background-color:#333;
+}
+div{
+    width: 100%;
+    height:100%;
+
+}
+
+.wrapper{
+    white-space:nowrap;
+    overflow:hidden;
+}
+.album{
+    font-size:0;
+}
+
+.item{
+    display:inline-block;
+    width:24%;
+    
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+
+/* .item{
+    display:inline-block;
+    width: 375px;
+    height:667px;
+    background-color:rgba(0, 0, 0, 0.5);
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position: center;
+    
+} */

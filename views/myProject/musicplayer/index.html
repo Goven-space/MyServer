@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>播放器</title>
+    <link rel="stylesheet" href="./myProject/musicplayer/css/index.css">
+    <link rel="stylesheet" href="./myProject/musicplayer/css/iconfont.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <img id="move" src="./myProject/musicplayer/img/1.png" alt="">
+            <audio id="audio" src="./myProject/musicplayer/source/1.mp3"></audio>
+        </div>
+        <p class="music-name">你害怕大雨吗 - 周柏豪</p>
+        <div class="tool">
+            <div class="ctrl-btn">
+                <div class="last">
+                    <i class="iconfont icon-shangyishou"></i>
+                </div>
+                <div class="btn">
+                    <i class="iconfont icon-bofang2"></i>
+                </div>
+                <div class="next">
+                    <i class="iconfont icon-xiayishou"></i>
+                </div>
+            </div>
+            <div class="progress">
+                <div class="progress-bg"></div>
+                <div class="progress-value">
+                    <div class="point-box">
+                        <span class="value-point"></span>
+                    </div>
+                </div>
+                <div class="timer">
+                    <p class="current-time">00:00</p>
+                    <p>/</p>
+                    <p class="all-time">00:00</p>
+                </div>
+            </div>
+            <div class="volume">
+                <i class="iconfont icon-shengyin"></i>
+            </div>
+            <div class="vol-wrapper">
+                <div class="vol-bg"></div>
+                <div class="vol-value">
+                    <div class="vol-box">
+                        <span class="vol-point"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./myProject/musicplayer/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "errorCode": 0,
+  "errorMessage": "",
+  "data": [
+    {
+      "sku_id": "1",
+      "pid": "1",
+      "name": "小米8 青春 全网通版 6GB内存 暮光金 64GB",
+      "img": "",
+      "imgs": [
+        "https://via.placeholder.com/800/FFFFFF/FF9900?text=Gold"
+      ],
+      "desc": "",
+      "price": "1499",
+      "market_price": "0",
+      "stock": "1",
+      "prop1_value": "6GB+64GB 全网通",
+      "prop2_value": "暮光金",
+      "id": "8",
+      "quantity": "3"
+    }
+    
+  ]
+}

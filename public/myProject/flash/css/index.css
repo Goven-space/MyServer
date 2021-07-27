@@ -1,0 +1,147 @@
+body,ul,li{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.container{
+    width:80%;
+    margin:0 auto;
+    min-width:600px;
+}
+ul{
+    display:flex;
+    margin-top:100px;
+    
+}
+li{
+    position:relative;
+    display:inline-block;
+    width:240px;
+    margin:0 10px;
+    border:2px solid rebeccapurple;
+    border-radius:20px;
+    overflow: hidden;
+    font-size:0;
+    background:rgba(0, 0, 0, 0.7)
+
+}
+img{
+    border-radius:20px;
+    transform: translateX(100%);
+    transition:transform 0.5s linear;
+}
+
+.cover{
+    position:absolute;
+    left:0;
+    bottom:0;
+    border-radius: 20px;
+    height:50px;
+    width:100%;
+    overflow: hidden;
+    background:linear-gradient(to bottom,transparent,rgba(0,0,0,0.8));
+}
+.des{
+    font-size:14px;
+    padding:5px 0 0 5px;
+    
+    color:white;
+    height:50px;
+    line-height:50px;
+    
+    transform: translate(0,100%);
+}
+.init img{
+    transform: translate(0);
+}
+ul li:nth-child(1) img{
+    transition-delay:0;
+}
+ul li:nth-child(2) img{
+    transition-delay:0.2s;
+}
+ul li:nth-child(3) img{
+    transition-delay:0.4s;
+}
+ul li:nth-child(4) img{
+    transition-delay:0.6s;
+}
+ul li:nth-child(5) img{
+    transition-delay:0.8s;
+}
+
+li .cover .in-top,
+li .cover .out-top{
+    transform: translate(0,-100%);
+}
+li .cover .in-right,
+li .cover .out-right{
+    transform: translate(100%,0);
+}
+li .cover .in-bottom,
+li .cover .out-bottom{
+    transform: translate(0,100%);
+}
+li .cover .in-left,
+li .cover .out-left{
+    transform: translate(-100%,0);
+}
+li .cover .in-top,
+li .cover .in-right,
+li .cover .in-bottom,
+li .cover .in-left{
+    animation: inDes 0.3s linear forwards;
+}
+
+
+@keyframes inDes{
+    100%{
+        transform:translate(0,0);
+    }
+}
+
+li .cover .out-top{
+    animation: outTop 0.3s linear;
+}
+@keyframes outTop{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(0,-100%);
+    }
+}
+li .cover .out-right{
+    animation: outRight 0.3s linear;
+}
+@keyframes outRight{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(100%,0);
+    }
+}
+li .cover .out-bottom{
+    animation: outBottom 0.3s linear;
+}
+@keyframes outBottom{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(0,100%);
+    }
+}
+li .cover .out-left{
+    animation: outLeft 0.3s linear;
+}
+@keyframes outLeft{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(-100%,0);
+    }
+}

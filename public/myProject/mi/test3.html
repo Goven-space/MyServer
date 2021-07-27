@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+</head>
+
+<body>
+    <script>
+        function wer(num) {
+            var rer = [];
+            for (var i = 0; i < num; i++) {
+                var temp = [];
+                
+                for (var j = 0; j <= i; j++) {
+                    if (j == 0 || j == i) {
+                        temp.push(1)
+                    } else {
+
+                        console.log(rer[i - 1][1] + " " + j );
+
+                        temp.push(rer[i - 1][j - 1] + rer[i - 1][j]);
+                    }
+                }
+                rer.push(temp);
+            }
+            return rer;
+        }
+        console.log(wer(3));
+
+        var 计时器指针 = null;
+        myClose.onclick = function(){
+            //点击了，就启动计时器，每20毫秒调用一次 高度每次下降函数 
+            计时器指针 = setInterval(高度每次下降函数, 20 );
+
+        }
+        function 高度每次下降函数(){
+            //当已经降到最低下了，就不能降了
+            if( adHeight <=0){
+                myAD.style.height = 0;
+                //把计时器指针删掉
+                clearInterval(计时器指针);
+            }else{
+                adHeight -= 2;
+                myAD.style.height = adHeight + "px";
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

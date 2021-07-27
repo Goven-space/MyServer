@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>小米首页</title>
+    <link rel="stylesheet" href="myProject/mi/css/style.css">
+    <link rel="stylesheet" href="myProject/mi/css/index.css">
+    <link rel="stylesheet" href="myProject/mi/css/iconfont.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="container hero-container">
+            <div class="hero-banner">
+                <div class="banner-ui">
+                </div>
+                <div class="banner-control">
+                    <div class="control-page">
+                    </div>
+                    <div class="control-rl">
+                        <a href="#" class="rl-prev">上一张</a>
+                        <a href="#" class="rl-next">下一张</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-sub clearfix">
+                <div class="sub-tool">
+                    <ul class="clearfix">
+                        <li><a href="#"><i class="iconfont">&#xe908;</i>选购手机</a></li>
+                        <li><a href="#"><i class="iconfont">&#xe905;</i>企业团购</a></li>
+                        <li><a href="#"><i class="iconfont">&#xe902;</i>F码通道</a></li>
+                        <li><a href="#"><i class="iconfont">&#xe906;</i>米粉卡</a></li>
+                        <li><a href="#"><i class="iconfont">&#xe904;</i>以旧换新</a></li>
+                        <li><a href="#"><i class="iconfont">&#xe907;</i>话费充值</a></li>
+                    </ul>
+                </div>
+                <div class="sub-promo">
+                    <ul>
+                        <li class="first"><a href="#"><img src="myProject/mi/img/promo1.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="myProject/mi/img/promo2.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="myProject/mi/img/promo3.jpg" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main">
+        <div class="container">
+            <div class="main-hd">
+                <h2></h2>
+            </div>
+            <div class="main-bd clearfix">
+                <div class="bd-ad">
+                    <ul class="clearfix">
+                        <li><a href="#"><img src="" alt=""></a></li>
+                    </ul>
+                </div>
+                <div class="bd-product clearfix">
+                    <ul class="clearfix">
+                        <li class="tpl-body-item">
+                            <div>
+                                <div class="face"><a href="#"><img src="" alt=""></a></div>
+                                <h3 class="title"><a href="#"></a></h3>
+                                <p class="desc"></p>
+                                <p class="price">
+                                    <span class="num"></span>元
+                                    <del><span class="num"></span>元</del>
+                                </p>
+                                <div class="flag"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="myProject/mi/js/api.js"></script>
+<script src="myProject/mi/js/header.js"></script>
+<script type="myProject/mi/text/javascript">
+$(function() {
+    // 轮播图
+    $.apiGet('/menu?type=carousel').done(function(result) {
+        const carousel = $('.hero-banner');
+        const carouselContent = carousel.find('.banner-ui');
+        const carouselPagination = carousel.find('.control-page');
+        let item, dom;
+        for (const idx in result) {
+            item = result[idx];
+            dom = $('<a>').attr('href', item.url);
+            $('<img>').attr('src', item.img).appendTo(dom);
+            carouselContent.append(dom);
+
+            $('<a>').text(idx).appendTo(carouselPagination);
+        }
+        // 显示第一张
+        carouselContent.children().first().addClass('show');
+        carouselPagination.children().first().addClass('active');
+        // TODO: 轮播
+        
+    });
+
+    // 推荐商品
+    $.apiGet('/menu?type=index').done(function(result) {
+        const container = $('.main .container');
+        const headTpl = $('.main-hd').remove();
+        const bodyTpl = $('.main-bd').remove();
+        const itemTpl = bodyTpl.find('.tpl-body-item').remove();
+        let headClone, bodyClone, bodyUl, ad, itemClone;
+        for (const group of result) {
+            headClone = headTpl.clone();
+            headClone.find('h2').text(group.name);
+            bodyClone = bodyTpl.clone();
+            ad = bodyClone.find('.bd-ad');
+            ad.find('a').attr('href', group.url)
+            ad.find('img').attr('src', group.img);
+            if (group.list) {
+                bodyUl = bodyClone.find('.bd-product ul');
+                for (const item of group.list) {
+                    itemClone = itemTpl.clone();
+                    itemClone.find('a').attr('href', $.productLink(item.pid));
+                    itemClone.find('img').attr('src', item.img);
+                    itemClone.find('.title a').text(item.name);
+                    itemClone.find('.desc').text(item.desc);
+                    itemClone.find('.flag').text(item.flag).css('background-color', item.flagcolor);
+                    itemClone.find('.price > .num').text(item.price);
+                    if (+item.market_price > 0) {
+                        itemClone.find('.price del .num').text(item.market_price);
+                    } else {
+                        itemClone.find('.price del').remove();
+                    }
+                    bodyUl.append(itemClone);
+                }
+            }
+            container.append(headClone).append(bodyClone);
+        }
+    });
+});
+
+</script>
+
+</body>
+
+</html>

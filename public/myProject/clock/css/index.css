@@ -1,0 +1,88 @@
+body,ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrapper{
+    position: relative;
+    width:230px;
+    height:230px;
+    margin: 100px auto 0;
+    background-color:#111;
+    border-radius: 40px;
+}
+.clock{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color:#fff;
+}
+.clock-num{
+    width: 100px;
+    height: 100px;   
+}
+.num{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left:-15px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    transform-origin:15px 100px;
+}
+
+.num span{
+    display: inline-block;
+}
+
+.point{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000;
+
+}
+.hou{
+    position: absolute;
+    top: 30px;
+    left: 98px;
+    width: 4px;
+    height: 70px;
+    border-radius: 2px;
+    background-color: #000;
+    transform-origin: center bottom;
+    /* transform: rotate(110deg); */
+}
+.min{
+    position: absolute;
+    top: 10px;
+    left: 98px;
+    width: 4px;
+    height: 90px;
+    border-radius: 2px;
+    background-color: #000;
+    transform-origin: center bottom;
+    /* transform: rotate(30deg); */
+}
+.sec{
+    position: absolute;
+    top: 10px;
+    left: 99px;
+    width:2px;
+    height: 100px;
+    background-color: orange;
+    border-radius: 1px;
+    transform-origin: center 90px;
+    /* transform: rotate(60deg); */
+}

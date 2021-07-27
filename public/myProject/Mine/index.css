@@ -1,0 +1,101 @@
+body,div,button{
+    padding :0;
+    margin:0;
+}
+body{
+    width:100vw;
+    text-align:center;
+    
+}
+.wrapper{
+    display:inlinde-block;
+    /* margin-top:40px; */
+}
+.level-btn{
+    padding:3px 10px;
+    margin:40px 5px;
+}
+.level-btn:hover{
+    background: #9180d8
+}
+.level-btn.active{
+    background:#310bc7
+}
+table{
+    border-spacing:1px;
+    background:#929196;
+    margin:0 auto;
+}
+td{
+    padding:0;
+    width:20px;
+    height:20px;
+    background:#ccc;
+    border:2px solid;
+    border-color: #fff #a1a1a1  #a1a1a1 #fff;
+    font-size:14px;
+    font-weight:bold;
+}
+.mine{
+    background-image: url('./mine.png');
+    background-size:cover;
+    border-color:#d9d9d9;
+}
+.zero{
+    border-color:#d9d9d9;
+    background:#d9d9d9;
+}
+.one{
+    border-color:#d9d9d9;
+    background:#d9d9d9;
+    color:#0332fe;
+}
+.two{
+    border-color:#d9d9d9;
+    background:#d9d9d9;
+    color:#019f02;
+}
+.three{
+    border-color:#d9d9d9;
+    background:#d9d9d9;
+    color:#ff2600;
+}
+.four{
+    border-color:#d9d9d9;
+    background:#d9d9d9;
+    color:#93208f;
+}
+.five{
+    border-color:#d9d9d9;
+    background:#d9d9d9;
+    color:#ff7f29;
+}
+.six{
+    border-color:#d9d9d9;
+    background:#d9d9d9;
+    color:#ff3fff;
+}
+.seven{
+    border-color:#d9d9d9;
+    background:#d9d9d9;
+    color:#3fffbf;
+}
+.eight{
+    border-color:#d9d9d9;
+    background:#d9d9d9;
+    color:#22ee0f;
+}
+
+
+td.bomb{
+    background-color:red;
+}
+td.flag{
+    background-image:url('./flag.png');
+    background-size:cover;
+    background-repeat:none;
+}
+.bottom-data{
+    font-size:20px;
+    font-weight:500;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        //首先定义一个person1的对象
+        var person1 = {
+            name: "xxx",
+            sex: "male"
+        }
+        //person2引用了person1
+        var person2 = person1;
+        //然后person2修改了对象里面的名字为ttt
+        person2.name = "ttt";
+
+        //重新给person1赋值为一个字符串了，它再也跟之前的姓名，性别没关系了
+        person1 = "abc";
+
+        console.log(person1)// -> 就是打印出"abc“了
+
+
+        //person2还是个人，可以访问person2的东西
+        console.log(person2.name);//可以获取到这人的名字 叫ttt
+    
+
+        setInterval
+
+        //你是要看 person2的东西？
+        //你是要看 person1的东西？
+        //还是哪里没理解？
+
+        console.log(person1);
+
+
+
+        //一个数组，求它出现的最大值
+        var x = [1,2,3,6,9,11,1];
+        var maxNum = 0;
+        for( var i = 0;i<x.length;i++){
+            //每次和数组里面的数字进行比较
+            if(maxNum < x[i]){
+                //如果比它小，就赋值给maxNum
+                maxNum = x[i];
+            }
+        }
+        //遍历完，不就得到了最大值？
+        console.log(maxNum);
+
+
+
+    </script>
+</body>
+</html>

@@ -7,7 +7,7 @@ const config = {
       host: 'localhost',
       database: 'estudy',
       username: 'root',
-      password: '13609089111'
+      password: ''
     }
   };
   

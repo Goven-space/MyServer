@@ -82,7 +82,7 @@ app.use('/student',studentRouter)
 
 app.use('/teacher',teacherRouter)
 
-app.listen(22,()=>{
+app.listen(80,()=>{
   console.log('正在监听')
 })
 
